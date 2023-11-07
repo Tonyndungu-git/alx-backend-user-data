@@ -37,6 +37,7 @@ def forbidden(error) -> str:
     """
     return jsonify({"error": "Forbidden"}), 403
 
+
 @app.before_request
 def authenticate_user():
     """Authenticates a user before processing a request.
@@ -54,6 +55,7 @@ def authenticate_user():
                 abort(401)
             if user is None:
                 abort(403)
+
 
 if __name__ == "__main__":
     host = getenv("API_HOST", "0.0.0.0")
