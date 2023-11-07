@@ -5,3 +5,4 @@
 
 class BasicAuth(Auth):
     """ Basic Authentication class"""
+    pass

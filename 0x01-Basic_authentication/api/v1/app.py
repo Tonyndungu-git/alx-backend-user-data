@@ -16,7 +16,7 @@ CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 auth = None
 auth_type = getenv('AUTH_TYPE', 'auth')
 
-if auth_type is AUTH:
+if auth_type = AUTH:
     auth = Auth()
 else:
     auth = BasicAuth()
