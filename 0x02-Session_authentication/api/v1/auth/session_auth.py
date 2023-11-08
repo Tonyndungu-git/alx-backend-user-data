@@ -2,9 +2,10 @@
 """Session Authentication
 """
 from uuid import uuid4
+from .auth import Auth
 
 
-class SessionAuth:
+class SessionAuth(Auth):
     """  session authentication """
     user_id_by_session_id = {}
 
