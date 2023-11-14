@@ -43,6 +43,7 @@ def login() -> str:
     response.set_cookie("session_id", session_id)
     return response
 
+
 @app.route("/sessions", methods=["DELETE"], strict_slashes=False)
 def logout() -> str:
     """DELETE /sessions
@@ -55,6 +56,7 @@ def logout() -> str:
         abort(403)
     AUTH.destroy_session(user.id)
     return redirect("/")
+
 
 @app.route("/profile", methods=["GET"], strict_slashes=False)
 def profile() -> str:
