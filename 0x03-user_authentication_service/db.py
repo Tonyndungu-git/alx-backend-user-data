@@ -39,7 +39,11 @@ class DB:
             new_user = User(email=email, hashed_password=hashed_password)
             self._session.add(new_user)
             self._session.commit()
-        except Exception:
+        except IntegrityError:
+            self._session.rollback()
+            new_user = None
+        except Exception as e:
+            print(f"An error occurred: {e}")
             self._session.rollback()
             new_user = None
         return new_user
